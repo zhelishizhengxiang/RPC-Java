@@ -11,7 +11,7 @@ import com.simon.rpc.common.service.UserService;
  *  RPC客户端测试类
  */
 public class TestClient {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         //客户端的代理对象
 //        ClientProxy clientProxy=new ClientProxy("127.0.0.1",9999);
         //有了zookeeper注册中心，就可以动态获取服务地址了

@@ -1,5 +1,7 @@
 package com.simon.rpc.client.serviceCenter;
 
+import com.simon.rpc.client.cache.ServiceCache;
+import com.simon.rpc.client.serviceCenter.ZKWatcher.watchZK;
 import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
@@ -21,9 +23,11 @@ public class ZKServiceCenter implements ServiceCenter{
     private CuratorFramework client;
     //zookeeper根路径节点
     private static final String ROOT_PATH = "MyRPC";
+    //客户端本地缓存
+    private ServiceCache serviceCache=new ServiceCache();
 
     //负责zookeeper客户端的初始化，并与zookeeper服务端进行连接
-    public ZKServiceCenter(){
+    public ZKServiceCenter() throws InterruptedException {
         // 充实策略：指数时间重试
         RetryPolicy policy = new ExponentialBackoffRetry(1000, 3);
         // zookeeper的地址固定，不管是服务提供者还是，消费者都要与之建立连接
@@ -38,12 +42,23 @@ public class ZKServiceCenter implements ServiceCenter{
                 .build();
         this.client.start();
         System.out.println("zookeeper 连接成功");
+        //初始化缓存
+        serviceCache=new ServiceCache();
+        //使用监听器监听服务提供者的变化
+        watchZK watchZK=new watchZK(client,serviceCache);
+        //启动监听
+        watchZK.watchChange(ROOT_PATH);
     }
 
     @Override
     public InetSocketAddress serviceDiscovery(String serviceName) {
         try {
-            List<String> strings = client.getChildren().forPath("/" + serviceName);
+            //先去本地缓存中招
+            List<String> strings = serviceCache.getServiceFromCache(serviceName);
+            //没有再去zookeeper中找
+            if(strings==null){
+                strings = client.getChildren().forPath("/" + serviceName);
+            }
             // 这里默认用的第一个，后面加负载均衡
             String string = strings.get(0);
             return parseAddress(string);

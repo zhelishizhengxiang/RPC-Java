@@ -20,7 +20,7 @@ public class ClientProxy implements InvocationHandler {
     //目标类
     private RpcClient  rpcClient;
 
-    public ClientProxy() {
+    public ClientProxy() throws InterruptedException {
         this.rpcClient = new NettyRpcClient();
     }
     @Override

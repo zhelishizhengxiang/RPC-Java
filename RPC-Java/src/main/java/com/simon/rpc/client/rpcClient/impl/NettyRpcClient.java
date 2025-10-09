@@ -22,7 +22,7 @@ import java.net.InetSocketAddress;
  * @ProjectName: RPC-Java
  * @Package: com.simon.rpc.client.rpcClient.impl
  * @ClassName: NettyRpcClient
- * @Description:
+ * @Description: netty后的客户端类。
  * @Author: Simon
  * @CreateDate: 2025/10/8
  */
@@ -31,7 +31,7 @@ public class NettyRpcClient implements RpcClient {
     //netty启动引导类bootstrap
     private static final Bootstrap bootstrap;
     private static final EventLoopGroup eventLoopGroup;
-    public NettyRpcClient(){
+    public NettyRpcClient() throws InterruptedException {
         this.serviceCenter=new ZKServiceCenter();
     }
     //netty客户端初始化
