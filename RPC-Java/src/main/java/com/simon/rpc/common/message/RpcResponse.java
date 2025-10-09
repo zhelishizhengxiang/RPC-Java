@@ -1,7 +1,9 @@
 package com.simon.rpc.common.message;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -13,15 +15,19 @@ import java.io.Serializable;
  */
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class RpcResponse implements Serializable {
     //状态信息
     private int code;
     private String message;
+    //传入数据的类型
+    private Class<?> dataType;
     //具体数据
     private Object data;
     //构造成功信息
     public static RpcResponse sussess(Object data){
-        return RpcResponse.builder().code(200).data(data).build();
+        return RpcResponse.builder().code(200).data(data).dataType(data.getClass()).build();
     }
     //构造失败信息
     public static RpcResponse fail(){

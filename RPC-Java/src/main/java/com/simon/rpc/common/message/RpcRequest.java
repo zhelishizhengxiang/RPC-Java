@@ -1,7 +1,9 @@
 package com.simon.rpc.common.message;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -13,6 +15,8 @@ import java.io.Serializable;
  */
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class RpcRequest implements Serializable {
     //服务接口全限定名，客户端只知道接口名，在服务端接口指向实现类
     private String interfaceName;

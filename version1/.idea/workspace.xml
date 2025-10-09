@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9965864c-cbac-4894-9fcb-93103359c7c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/serviceCenter/ServiceCenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/serviceCenter/ZKServiceCenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/server/serverRegister/ServiceRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/server/serverRegister/ZKServiceRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/TestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/TestClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/proxy/ClientProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/proxy/ClientProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/rpcClient/impl/NettyRpcClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/rpcClient/impl/NettyRpcClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/server/TestServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/server/TestServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/server/provider/ServiceProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/server/provider/ServiceProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9965864c-cbac-4894-9fcb-93103359c7c9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +64,7 @@
       <updated>1736761843999</updated>
       <workItem from="1736761845507" duration="6000" />
       <workItem from="1759836535177" duration="3339000" />
-      <workItem from="1759920133122" duration="8036000" />
+      <workItem from="1759920133122" duration="8045000" />
     </task>
     <servers />
   </component>

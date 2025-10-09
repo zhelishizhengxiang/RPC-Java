@@ -34,7 +34,7 @@ public class ClientProxy implements InvocationHandler {
                 .build();
         //将信息发送给服务段让他来实现方法的调用并返回结果，接收响应
         RpcResponse response= rpcClient.sendRequest(request);
-        //将数据库查询奥德User对象返回
+        //将数据库查询的User对象返回
         return response.getData();
     }
 
