@@ -5,38 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9965864c-cbac-4894-9fcb-93103359c7c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/.idea/MarsCodeWorkspaceAppSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/IOClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/TestClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/netty/handler/NettyClientHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/netty/nettyInitializer/NettyClientInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/proxy/ClientProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/rpcClient/RpcClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/rpcClient/impl/NettyRpcClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/rpcClient/impl/SimpleSocketRpcCilent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/common/message/RpcRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/common/message/RpcResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/common/pojo/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/common/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/common/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/server/TestServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/server/netty/handler/NettyServerHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/server/netty/nettyInitializer/NettyServerInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/server/provider/ServiceProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/server/server/RpcServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/server/server/impl/NettyRpcServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/server/server/impl/SimpleRPCServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/server/server/impl/ThreadPoolRPCServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/server/server/work/WorkThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/MarsCodeWorkspaceAppSettings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/serviceCenter/ServiceCenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/serviceCenter/ZKServiceCenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/server/serverRegister/ServiceRegister.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/server/serverRegister/ZKServiceRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/TestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/TestClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/proxy/ClientProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/proxy/ClientProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/rpcClient/impl/NettyRpcClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/client/rpcClient/impl/NettyRpcClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/server/TestServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/server/TestServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/server/provider/ServiceProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RPC-Java/src/main/java/com/simon/rpc/server/provider/ServiceProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../RPC-Java/src/main/resources/log4j.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +75,7 @@
       <updated>1736761843999</updated>
       <workItem from="1736761845507" duration="6000" />
       <workItem from="1759836535177" duration="3339000" />
-      <workItem from="1759920133122" duration="5320000" />
+      <workItem from="1759920133122" duration="8036000" />
     </task>
     <servers />
   </component>

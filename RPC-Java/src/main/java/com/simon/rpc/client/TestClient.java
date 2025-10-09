@@ -13,7 +13,9 @@ import com.simon.rpc.common.service.UserService;
 public class TestClient {
     public static void main(String[] args) {
         //客户端的代理对象
-        ClientProxy clientProxy=new ClientProxy("127.0.0.1",9999);
+//        ClientProxy clientProxy=new ClientProxy("127.0.0.1",9999);
+        //有了zookeeper注册中心，就可以动态获取服务地址了
+        ClientProxy clientProxy=new ClientProxy();
         //获取要调用的对象的代理对象
         UserService proxy=clientProxy.getProxy(UserService.class);
 

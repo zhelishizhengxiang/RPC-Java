@@ -20,8 +20,8 @@ public class ClientProxy implements InvocationHandler {
     //目标类
     private RpcClient  rpcClient;
 
-    public ClientProxy(String host, int port) {
-        this.rpcClient = new NettyRpcClient(host, port);
+    public ClientProxy() {
+        this.rpcClient = new NettyRpcClient();
     }
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
