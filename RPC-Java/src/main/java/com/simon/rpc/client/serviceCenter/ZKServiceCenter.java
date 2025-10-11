@@ -2,6 +2,7 @@ package com.simon.rpc.client.serviceCenter;
 
 import com.simon.rpc.client.cache.ServiceCache;
 import com.simon.rpc.client.serviceCenter.ZKWatcher.watchZK;
+import com.simon.rpc.client.serviceCenter.balance.impl.ConsistencyHashBalance;
 import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
@@ -59,9 +60,9 @@ public class ZKServiceCenter implements ServiceCenter{
             if(strings==null){
                 strings = client.getChildren().forPath("/" + serviceName);
             }
-            // 这里默认用的第一个，后面加负载均衡
-            String string = strings.get(0);
-            return parseAddress(string);
+            // 负载均衡得到地址
+            String address=new ConsistencyHashBalance().balance(strings);
+            return parseAddress(address);
         } catch (Exception e) {
             e.printStackTrace();
         }
