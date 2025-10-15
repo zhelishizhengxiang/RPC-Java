@@ -12,7 +12,7 @@ import java.net.InetSocketAddress;
  * @version 1.0
  * @ProjectName: RPC-Java
  * @Package: com.simon.rpc.server.serverRegister
- * @Description:
+ * @Description: 服务的注册中心
  * @Author: Simon
  * @CreateDate: 2025/10/9
  */
@@ -21,6 +21,8 @@ public class ZKServiceRegister implements ServiceRegister {
     private CuratorFramework client;
     //zookeeper根路径节点
     private static final String ROOT_PATH = "MyRPC";
+    //重试白名单节点,只有幂等性服务才可以进行重试
+     private static final String RETRY = "Retry";
 
     //负责zookeeper客户端的初始化
     public ZKServiceRegister(){
@@ -45,7 +47,7 @@ public class ZKServiceRegister implements ServiceRegister {
      * @param serviceAddress 服务地址
      * */
     @Override
-    public void register(String serviceName, InetSocketAddress serviceAddress) {
+    public void register(String serviceName, InetSocketAddress serviceAddress,boolean canRetry) {
         try {
             // serviceName创建成永久节点，服务提供者下线时，不删服务名，只删地址
             if(client.checkExists().forPath("/" + serviceName) == null){
@@ -55,6 +57,11 @@ public class ZKServiceRegister implements ServiceRegister {
             String path = "/" + serviceName +"/"+ getServiceAddress(serviceAddress);
             // 临时节点，服务端断开连接就自动删除节点
             client.create().creatingParentsIfNeeded().withMode(CreateMode.EPHEMERAL).forPath(path);
+            //如果该服务是幂等性服务则注册到白名单当中
+            if(canRetry){
+                path="/"+RETRY+"/"+serviceName;
+                client.create().creatingParentsIfNeeded().withMode(CreateMode.EPHEMERAL).forPath(path);
+            }
         } catch (Exception e) {
             System.out.println("此服务已存在");
         }

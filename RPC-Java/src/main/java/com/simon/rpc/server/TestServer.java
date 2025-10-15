@@ -18,7 +18,7 @@ public class TestServer {
         UserService userService=new UserServiceImpl();
         //注册服务
         ServiceProvider serviceProvider=new ServiceProvider(9999, "127.0.0.1");
-        serviceProvider.provideServiceInterface(userService);
+        serviceProvider.provideServiceInterface(userService,true);
 
         RpcServer rpcServer=new NettyRpcServer(serviceProvider);
         rpcServer.start(9999);

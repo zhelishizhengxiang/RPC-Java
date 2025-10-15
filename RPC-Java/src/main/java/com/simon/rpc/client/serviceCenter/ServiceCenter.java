@@ -17,4 +17,11 @@ public interface ServiceCenter {
      * @return 服务地址,InetSocketAddress表示了一个网络地址,包含了IP地址和端口号
      */
     InetSocketAddress serviceDiscovery(String serviceName);
+
+    /**
+     * 判断是否可重试
+     * @param serviceName 服务名
+     * @return 是否可重试
+     */
+    boolean checkRetry(String serviceName);
 }

@@ -11,6 +11,11 @@ import java.net.InetSocketAddress;
  * @CreateDate: 2025/10/9
  */
 public interface ServiceRegister {
-    //注册：保存服务与地址
-    void register(String serviceName, InetSocketAddress serviceAddress);
+    /**
+     * 注册服务
+     * @param serviceName 服务名
+     * @param serviceAddress 服务地址
+     * @param canRetry 是否可重试
+     */
+    void register(String serviceName, InetSocketAddress serviceAddress,boolean canRetry);
 }
