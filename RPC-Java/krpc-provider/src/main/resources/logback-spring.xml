@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- 自定义日志级别颜色映射 -->
+    <conversionRule conversionWord="coloredLevel" converterClass="ch.qos.logback.classic.pattern.ColorfulLevelConverter"/>
+    
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- 确保Windows控制台支持ANSI颜色 -->
+        <withJansi>true</withJansi>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!-- 明确设置不同级别日志的颜色 -->
+            <pattern>%d{HH:mm:ss.SSS} %highlight(%-5level){FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=cyan} [%thread] %cyan(%logger{36}) - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 设置root日志级别和输出目标 -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+    </root>
+
+    <!-- 可以针对特定包设置不同的日志级别 -->
+    <logger name="com.simon" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE" />
+    </logger>
+
+    <!-- 第三方库的日志级别设置 -->
+    <logger name="org.springframework" level="INFO" />
+    <logger name="io.netty" level="INFO" />
+</configuration>
