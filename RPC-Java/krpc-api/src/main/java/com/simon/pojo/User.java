@@ -22,7 +22,7 @@ public class User implements Serializable {
     private Integer id;
     private String userName;
     /*true为男，false为女*/
-    private boolean sex;
+    private boolean gender;
     
 
 }

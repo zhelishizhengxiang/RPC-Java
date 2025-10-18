@@ -1,6 +1,6 @@
-package com.kama.test.balance;
+package com.simon.test.balance;
 
-import com.kama.client.servicecenter.balance.impl.RoundLoadBalance;
+import com.simon.client.serviceCenter.balance.impl.RoundLoadBalance;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,7 +22,7 @@ public class RoundLoadBalanceTest {
 
     @Before
     public void setUp() {
-        // 在每个测试前初始化负载Z均衡器
+        // 在每个测试前初始化负载均衡器
         loadBalance = new RoundLoadBalance();
     }
 

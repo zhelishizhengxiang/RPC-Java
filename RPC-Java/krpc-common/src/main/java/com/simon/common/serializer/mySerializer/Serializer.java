@@ -1,5 +1,8 @@
 package com.simon.common.serializer.mySerializer;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @version 1.0
  * @ProjectName: RPC-Java
@@ -30,19 +33,27 @@ public interface Serializer {
      * @return 序列化器的类型编码
      */
     int getType();
+
+    //使用Map存储序列化器
+    // 0：java自带序列化方式, 1: json序列化方式
+    static final Map<Integer, Serializer> serializerMap = new HashMap<>();
     /**
      * 根据序列化器的类型编码获取对应的序列化器实例
      * @param code 序列化器的类型编码，0：java自带序列化方式, 1: json序列化方式
      * @return 对应的序列化器实例
      */
     static Serializer getSerializerByCode(int code){
-        switch (code){
-            case 0:
-                return new ObjectSerializer();
-            case 1:
-                return new JsonSerializer();
-            default:
-                return null;
+        //只保证初始化一次
+        if(serializerMap.isEmpty()){
+            serializerMap.put(0, new ObjectSerializer());
+            serializerMap.put(1, new JsonSerializer());
+            serializerMap.put(2, new KryoSerializer());
+            serializerMap.put(3, new HessianSerializer());
+            serializerMap.put(4, new ProtostuffSerializer());
         }
+        return serializerMap.get(code);
     }
+
+
+
 }

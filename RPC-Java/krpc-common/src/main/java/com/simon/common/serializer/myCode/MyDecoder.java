@@ -21,6 +21,9 @@ import java.util.List;
 public class MyDecoder extends ByteToMessageDecoder {
     @Override
     protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf in, List<Object> out) throws Exception {
+        //检查可读字节数
+        if(in.readableBytes() < 8)  // messageType + serializerType + length
+            return;
         //1.读取消息类型
         short messageType = in.readShort();
         // 现在还只支持request与response请求

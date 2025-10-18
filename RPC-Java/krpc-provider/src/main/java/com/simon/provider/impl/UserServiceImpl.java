@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService {
         User user = User.builder()
                 .userName(UUID.randomUUID().toString())
                 .id(id)
-                .sex(random.nextBoolean())
+                .gender(random.nextBoolean())
                 .build();
         return user;
     }
