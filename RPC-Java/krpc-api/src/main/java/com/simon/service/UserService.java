@@ -1,6 +1,7 @@
 package com.simon.service;
 
 
+import com.simon.annotation.Retryable;
 import com.simon.pojo.User;
 
 /**
@@ -12,6 +13,7 @@ import com.simon.pojo.User;
 public interface UserService {
 
     //根据id获取用户
+    @Retryable
     User getUserById(Integer id);
 
     //新增用户
